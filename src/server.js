@@ -7,6 +7,9 @@ require("./loadBalancer/backend");
 const RoundRobin =
 require("./loadBalancer/strategies/roundRobin");
 
+const LeastConnections =
+require("./loadBalancer/strategies/leastConnections");
+
 const LoadBalancer =
 require("./loadBalancer/loadBalancer");
 
@@ -33,8 +36,8 @@ const backends =
                                     )
 );
 
-const strategy =new RoundRobin();
-
+const strategy = new RoundRobin();
+// const strategy = new LeastConnections();
 const healthChecker = new HealthChecker(backends, 5000); //checks every 5 seconds
 
 healthChecker.start();
