@@ -1,65 +1,28 @@
 cpp-load-balancer/
 │
-├── CMakeLists.txt
+├── package.json
 ├── README.md
-├── LICENSE
-├── .gitignore
-│
-├── include/
-│   │
-│   ├── networking/
-│   │   ├── socket.hpp
-│   │   └── http.hpp
-│   │
-│   ├── server/
-│   │   └── backend_server.hpp
-│   │
-│   ├── load_balancer/
-│   │   ├── load_balancer.hpp
-│   │   ├── backend.hpp
-│   │   ├── backend_pool.hpp
-│   │   ├── load_balancing_strategy.hpp
-│   │   ├── round_robin.hpp
-│   │   ├── least_connections.hpp
-│   │   └── health_checker.hpp
-│   │
-│   └── utils/
-│       ├── logger.hpp
-│       └── config.hpp
 │
 ├── src/
+│   ├── server.js
 │   │
-│   ├── networking/
-│   │   ├── socket.cpp
-│   │   └── http.cpp
+│   ├── loadBalancer/
+│   │   ├── loadBalancer.js
+│   │   ├── backend.js
+│   │   └── strategies/
+│   │       ├── roundRobin.js
+│   │       └── leastConnections.js
 │   │
-│   ├── server/
-│   │   └── backend_server.cpp
-│   │
-│   ├── load_balancer/
-│   │   ├── load_balancer.cpp
-│   │   ├── backend.cpp
-│   │   ├── backend_pool.cpp
-│   │   ├── round_robin.cpp
-│   │   ├── least_connections.cpp
-│   │   └── health_checker.cpp
+│   ├── health/
+│   │   └── healthChecker.js
 │   │
 │   └── utils/
-│       ├── logger.cpp
-│       └── config.cpp
+│       └── logger.js
 │
-├── tests/
-│   ├── test_backend.cpp
-│   ├── test_round_robin.cpp
-│   ├── test_least_connections.cpp
-│   └── test_http.cpp
+├── backends/
+│   └── server.js
 │
 ├── config/
-│   └── backends.conf
+│   └── backends.json
 │
-├── scripts/
-│   ├── start_backends.sh
-│   ├── stop_backends.sh
-│   └── benchmark.sh
-│
-└── build/
+└── tests/

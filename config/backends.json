@@ -1,0 +1,20 @@
+{
+    "port": 9000,
+    "backends": [
+        {
+            "id": "backend-1",
+            "host": "localhost",
+            "port": 8001
+        },
+        {
+            "id": "backend-2",
+            "host": "localhost",
+            "port": 8002
+        },
+        {
+            "id": "backend-3",
+            "host": "localhost",
+            "port": 8003
+        }
+    ]
+}
