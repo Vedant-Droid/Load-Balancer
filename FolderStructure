@@ -1,0 +1,65 @@
+cpp-load-balancer/
+│
+├── CMakeLists.txt
+├── README.md
+├── LICENSE
+├── .gitignore
+│
+├── include/
+│   │
+│   ├── networking/
+│   │   ├── socket.hpp
+│   │   └── http.hpp
+│   │
+│   ├── server/
+│   │   └── backend_server.hpp
+│   │
+│   ├── load_balancer/
+│   │   ├── load_balancer.hpp
+│   │   ├── backend.hpp
+│   │   ├── backend_pool.hpp
+│   │   ├── load_balancing_strategy.hpp
+│   │   ├── round_robin.hpp
+│   │   ├── least_connections.hpp
+│   │   └── health_checker.hpp
+│   │
+│   └── utils/
+│       ├── logger.hpp
+│       └── config.hpp
+│
+├── src/
+│   │
+│   ├── networking/
+│   │   ├── socket.cpp
+│   │   └── http.cpp
+│   │
+│   ├── server/
+│   │   └── backend_server.cpp
+│   │
+│   ├── load_balancer/
+│   │   ├── load_balancer.cpp
+│   │   ├── backend.cpp
+│   │   ├── backend_pool.cpp
+│   │   ├── round_robin.cpp
+│   │   ├── least_connections.cpp
+│   │   └── health_checker.cpp
+│   │
+│   └── utils/
+│       ├── logger.cpp
+│       └── config.cpp
+│
+├── tests/
+│   ├── test_backend.cpp
+│   ├── test_round_robin.cpp
+│   ├── test_least_connections.cpp
+│   └── test_http.cpp
+│
+├── config/
+│   └── backends.conf
+│
+├── scripts/
+│   ├── start_backends.sh
+│   ├── stop_backends.sh
+│   └── benchmark.sh
+│
+└── build/
