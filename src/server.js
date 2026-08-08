@@ -10,7 +10,10 @@ require("./loadBalancer/strategies/roundRobin");
 const LoadBalancer =
 require("./loadBalancer/loadBalancer");
 
-const configPath =path.join(
+const HealthChecker =
+    require("./loadBalancer/health/healthChecker");
+
+    const configPath =path.join(
                     __dirname,
                     "../config/backends.json"
 );
@@ -30,8 +33,11 @@ const backends =
                                     )
 );
 
-const strategy =
-new RoundRobin();
+const strategy =new RoundRobin();
+
+const healthChecker = new HealthChecker(backends, 5000); //checks every 5 seconds
+
+healthChecker.start();
 
 const loadBalancer =new LoadBalancer(
                         config.port,
