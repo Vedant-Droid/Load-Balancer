@@ -1,6 +1,6 @@
 #!/bin/bash
 LB_URL="http://localhost:9000"
-REQUESTS_PER_SECOND=1
+REQUESTS_PER_SECOND=1000
 
 echo "======================================"
 echo " Load Balancer Traffic Generator"

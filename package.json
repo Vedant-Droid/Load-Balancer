@@ -6,6 +6,7 @@
     "backend1": "node backends/server.js 8001 backend-1",
     "backend2": "node backends/server.js 8002 backend-2",
     "backend3": "node backends/server.js 8003 backend-3",
+    "backend4": "node backends/server.js 8004 backend-4",
 
     "backends": "concurrently \"npm run backend1\" \"npm run backend2\" \"npm run backend3\"",
     "lb": "node src/server.js",

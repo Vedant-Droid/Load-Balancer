@@ -14,23 +14,17 @@ if (!port || !serverName) {
 }
 
 const server = http.createServer((req, res) => {
-
-    console.log(
-        `[${serverName}] ${req.method} ${req.url}`
-    );
+    console.log(`[${serverName}] ${req.method} ${req.url}`);
 
     // Health check
     if (req.url === "/health") {
-
         res.writeHead(200, {
             "Content-Type": "application/json"
         });
-
         res.end(JSON.stringify({
             server: serverName,
             status: "healthy"
         }));
-
         return;
     }
 
@@ -42,10 +36,7 @@ const server = http.createServer((req, res) => {
         path: req.url
     };
 
-    res.writeHead(200, {
-        "Content-Type": "application/json"
-    });
-
+    res.writeHead(200, {"Content-Type": "application/json"});
     res.end(JSON.stringify(response));
 });
 
