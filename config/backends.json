@@ -4,17 +4,17 @@
         {
             "id": "backend-1",
             "host": "localhost",
-            "port": 8001
+            "port": 3001
         },
         {
             "id": "backend-2",
             "host": "localhost",
-            "port": 8002
+            "port": 3002
         },
         {
             "id": "backend-3",
             "host": "localhost",
-            "port": 8003
+            "port": 3003
         }
     ]
 }

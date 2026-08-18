@@ -5,6 +5,7 @@ class Metrics {
         this.successfulRequests = 0;
         this.failedRequests = 0;
         this.totalLatency = 0;
+        this.completedRequests = 0;
         this.startTime = Date.now();
         this.backendStats = {};
     }
@@ -23,6 +24,8 @@ class Metrics {
     }
 
     requestFinished(backend, latency, success) {
+        
+        this.completedRequests++;
 
         this.totalLatency += latency;
 
@@ -53,7 +56,7 @@ class Metrics {
             (Date.now() - this.startTime) / 1000;
 
         const averageLatency =
-            this.totalRequests > 0
+            this.completedRequests > 0
                 ? this.totalLatency / this.totalRequests
                 : 0;
 
@@ -95,6 +98,7 @@ class Metrics {
         return {
             uptime: uptime,
             totalRequests:this.totalRequests,
+            completedRequests:this.completedRequests,
             successfulRequests:this.successfulRequests,
             failedRequests:this.failedRequests,
             requestsPerSecond:requestsPerSecond,
